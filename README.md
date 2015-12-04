@@ -1,5 +1,5 @@
-IPFS assets cache Chrome Extension
-=======================
+Transparent Image Extension
+===========================
 
 ####Setup
 
@@ -12,6 +12,10 @@ IPFS assets cache Chrome Extension
 >npm run build #builds the app
 ```
 
+```sh
+>npm run dev #builds the app and watcher for changes
+```
+
 ####Gulp tasks
 
  + `clean`: deletes the `dist` directory
@@ -19,8 +23,3 @@ IPFS assets cache Chrome Extension
  + `watch`: watch for source changes
 
 `source env.sh` for using local gulp alias
-
-####TODO:
-
- + Add tests
- + Improve gulpfile
