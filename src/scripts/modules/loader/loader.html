@@ -1,9 +1,13 @@
 <div class="col-xs-12">
   <div class="row-fluid">
     <p class="lead">Load an image</p>
-    <form name="register.form" class="form">
-      <div class="form-group">
-        <input type="file" name="file" class="form-control" placeholder="File" fileread="register.file">
+    <p ng-if="loader.file.name">
+      Loaded file: {{ loader.file.name }} <span><button type="button" class="btn btn-xs btn-primary" autofocus="off" ng-click="loader.unload()">Unload</button></span>
+    </p>
+
+    <form name="loader.form" class="form">
+      <div class="form-group" ng-if="!loader.file.name">
+        <input type="file" name="file" class="form-control" placeholder="File" fileread="loader.file" on-load-file="loader.loadData">
       </div>
       <p class="note"><small>Thanks for using img.extension. Give us a like at <a href="http://www.github.com/001-whatever">Github</a> </small></p>
     </form>
