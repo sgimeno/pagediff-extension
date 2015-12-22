@@ -13,7 +13,7 @@ if (localStorage.pd_img_src){
 
 function renderImage(msg, sendResponse) {
   wrapper = document.getElementById('image-extension-wrapper');
-  console.log(msg);
+  
   if (!wrapper) {
     document.body.innerHTML += tpl(msg.imageData);
   } else {
@@ -45,8 +45,8 @@ function setLocalStorage(data, sendResponse){
 }
 
 function unloadImage(sendResponse){
-  var img = document.getElementById('img-placeholder');
-  img.src = '#';
+  wrapper = document.getElementById('image-extension-wrapper');
+  document.body.removeChild(wrapper);
   delete localStorage.pd_file_name;
   delete localStorage.pd_img_src;
   sendResponse(true);
