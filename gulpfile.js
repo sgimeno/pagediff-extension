@@ -12,6 +12,7 @@ var assign = require('lodash.assign');
 var livereload = require('gulp-livereload');
 var html2js = require('gulp-ng-html2js');
 var concat = require('gulp-concat');
+var connect = require('gulp-connect');
 
 /*
 	A more sophisticated browserify build & watch
@@ -36,6 +37,13 @@ var customOpts = {
     dest: { fileName: 'content.js', path: './dist/scripts' }
   }
 };
+
+gulp.task('connect', function() {
+  connect.server({
+    root: './demo-website',
+    port: process.env.PORT || 5000
+  });
+});
 
 function bundle(bundler, options) {
   options = options || {};
@@ -163,4 +171,4 @@ gulp.task('watch', ['watchify:popup', 'watchify:content', 'watchify:background']
 
 gulp.task('build', ['js:popup', 'js:content', 'js:background', 'html', 'assets', 'manifest']);
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['connect', 'watch']);
