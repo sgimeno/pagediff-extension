@@ -1,5 +1,5 @@
-Transparent Image Extension
-===========================
+Pagediff Extension
+==================
 
 ####Setup
 
